@@ -7,9 +7,11 @@ export const MyComponent: React.FC = () => {
   const [myName, setMyName] = React.useState("");
 
   React.useEffect(() => {
-    setTimeout(() => {
+    const id = setTimeout(() => {
       setMyName("Jane Doe");
     }, 1500);
+
+    return () => clearTimeout(id);
   }, []);
 
   return (

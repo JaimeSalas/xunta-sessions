@@ -1,7 +1,8 @@
 import React from "react";
 // import { MyComponent } from "./01-use-state";
 // import { MyComponent } from './02-use-state-object';
-import { MyComponent } from './03-component-did-load';
+// import { MyComponent } from './03-component-did-load';
+import { MyComponent } from './04-component-unmount';
 
 export const App = () => {
   return (
