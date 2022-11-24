@@ -1,5 +1,6 @@
 import React from "react";
-import { MyComponent } from "./01-use-state";
+// import { MyComponent } from "./01-use-state";
+import { MyComponent } from './02-use-state-object';
 
 export const App = () => {
   return (
