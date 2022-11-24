@@ -12,6 +12,7 @@ export const MemberTableRow: React.FC<Props> = (props) => {
       <img src={member.avatar_url} />
       <span>{member.id}</span>
       <span>{member.login}</span>
+      <a href={member.html_url}>Profile</a>
     </>
   );
 };
