@@ -5,11 +5,34 @@ interface UserInfo {
     lastname: string;
 }
 
+type UserInfoFields = 'name' | 'lastname'; 
+
+
 export const MyComponent: React.FC = () => {
   const [userInfo, setUserInfo] = React.useState<UserInfo>({
     name: 'Jane',
     lastname: 'Doe',
   });
+
+//   const obj = {
+//     name: 'jai',
+//     lastname: 'sal'
+//   };
+
+//   obj['lastname'] = '';
+
+//   const obj2 = {
+//     ...obj,
+//     age: 4,
+//     age: 8
+//   };
+
+  const onUserInfo = (field: UserInfoFields) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUserInfo({
+       ...userInfo,
+       [field]: e.target.value
+    });
+  }
 
   return (
     <>
@@ -17,15 +40,12 @@ export const MyComponent: React.FC = () => {
       <input
         type="text"
         value={userInfo.name}
-        onChange={(e) => {
-            // setMyName(e.target.value); 
-            // console.log(myName);
-            // userInfo.name = e.target.value;
-            setUserInfo({
-                ...userInfo,
-                name: e.target.value
-            });
-        }}
+        onChange={onUserInfo('name')}
+      />
+      <input
+        type="text"
+        value={userInfo.lastname}
+        onChange={onUserInfo('lastname')}
       />
     </>
   );
