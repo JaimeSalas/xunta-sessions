@@ -7,9 +7,11 @@ export const MyComponent: React.FC = () => {
   const [myName, setMyName] = React.useState("");
 
   React.useEffect(() => {
-    setMyName("Jane Doe");
+    setTimeout(() => {
+      setMyName("Jane Doe");
+    }, 1500);
   }, []);
-  
+
   return (
     <>
       <h4>{myName}</h4>
@@ -17,7 +19,7 @@ export const MyComponent: React.FC = () => {
         type="text"
         value={myName}
         onChange={(e) => {
-            setMyName(e.target.value); 
+          setMyName(e.target.value);
         }}
       />
     </>
