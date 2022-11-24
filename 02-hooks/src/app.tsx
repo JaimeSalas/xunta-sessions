@@ -4,7 +4,8 @@ import React from "react";
 // import { MyComponent } from './03-component-did-load';
 // import { MyComponent } from './04-component-unmount';
 // import { MyComponent } from './05-component-update-render';
-import { MyComponent } from './06-ajax-field-change';
+// import { MyComponent } from './06-ajax-field-change';
+import { MyComponent } from './07-custom-hook';
 
 export const App = () => {
   return (
