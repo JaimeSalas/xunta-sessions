@@ -7,12 +7,17 @@ import React from "react";
 // import { MyComponent } from './06-ajax-field-change';
 // import { MyComponent } from './07-custom-hook';
 // import { MyComponent } from './08-pure-component';
-import { MyComponent } from './09-pure-component-callback';
+// import { MyComponent } from './09-pure-component-callback';
+import { MyComponent } from "./my-component";
+import { MyContextProvider } from "./11-use-context";
 
 export const App = () => {
   return (
     <>
-      <MyComponent />
+      <MyContextProvider>
+        <MyComponent />
+      </MyContextProvider>
+      {/* <MyComponent /> */}
     </>
   );
 };
