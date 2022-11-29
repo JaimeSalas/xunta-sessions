@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FormLogin } from "@/components/form-login";
+import { routes } from "core";
+import { CenterLayout } from "@/layouts";
 
 export const LoginPage: React.FC = () => {
   const navigate = useNavigate();
@@ -10,11 +12,16 @@ export const LoginPage: React.FC = () => {
 
   const handleNavigate = (username: string, password: string) => {
     if (isValidCredentials(username, password)) {
-      navigate("/list");
+      // navigate("/list");
+      navigate(routes.list);
     } else {
       alert("Username / Password wrong... admin / test");
     }
   };
 
-  return <FormLogin onSubmit={handleNavigate} />;
+  return (
+    <CenterLayout>
+      <FormLogin onSubmit={handleNavigate} />
+    </CenterLayout>
+  );
 };

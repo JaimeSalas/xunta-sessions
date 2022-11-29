@@ -1,5 +1,7 @@
 import React from "react";
-import { Link, generatePath } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { routes } from 'core';
+import { AppLayout } from '@/layouts';
 
 interface MemberEntity {
   id: string;
@@ -17,7 +19,7 @@ export const ListPage: React.FC = () => {
   }, []);
 
   return (
-    <>
+    <AppLayout>
       <h2>Hello from List</h2>
       {/* <Link to="/detail">Navigate to detail page</Link> */}
 
@@ -29,12 +31,15 @@ export const ListPage: React.FC = () => {
           <React.Fragment key={m.id}>
             <img src={m.avatar_url} />
             <span>{m.id}</span>
-            <Link to={generatePath("/detail/:id", { id: m.login })}>
+            {/* <Link to={generatePath("/detail/:id", { id: m.login })}>
+              {m.login}
+            </Link> */}
+            <Link to={routes.details(m.login)}>
               {m.login}
             </Link>
           </React.Fragment>
         ))}
       </div>
-    </>
+    </AppLayout>
   );
 };
