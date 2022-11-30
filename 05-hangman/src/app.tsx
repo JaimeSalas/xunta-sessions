@@ -1,5 +1,6 @@
 import React from "react";
 import { getRandomWord } from './random-word.service';
+import { PlaceholderComponent } from './components';
 
 export const App = () => {
   React.useEffect(() => {
@@ -8,7 +9,10 @@ export const App = () => {
   }, []);
 
   return (
-    <div>Hello</div>
+    <div>
+      <PlaceholderComponent letter="R" show={false} />
+    </div>
+
   );
 };
 
