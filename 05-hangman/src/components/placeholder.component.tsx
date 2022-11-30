@@ -7,7 +7,7 @@ interface Props {
 
 export const PlaceholderComponent: React.FC<Props> = (props: Props) => {
   return (
-    <div style={{ width: "16px", height: '16px', borderBottom: "solid 3px black" }}>
+    <div style={{ width: "16px", height: '16px', marginRight: 8, borderBottom: "solid 3px black" }}>
       {props.show && <span>{props.letter}</span>}
     </div>
   );
