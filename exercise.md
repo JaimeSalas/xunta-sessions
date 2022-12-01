@@ -22,5 +22,5 @@ Si el usuario adivina la palabra dentro del límite de intentos habrá ganado la
     * La ruta pppal debe ser el menú √
 9. Consumir la configuración del juego al iniciar una nueva partida. 
     * Indicar al usuario que ha perdido √
-10. Permitir que el usuario reinicie el juego desde la pantalla del juego.
+10. Permitir que el usuario reinicie el juego desde la pantalla del juego. √
 11. Crear un histórico de partidas que se muestre en la pantalla de configuración.

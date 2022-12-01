@@ -2,12 +2,14 @@ import React from "react";
 import { getRandomWord } from "./random-word.service";
 import { SecretWordComponent, InputGuessLetterComponent } from "./components";
 import { GameConfigContext } from "../providers/game-config/game-config.context";
+import { GameRecordsContext } from '../providers/game-records/game-recods.context';
 
 export const GameContainer = () => {
   const [guessCount, setGuessCount] = React.useState(0); // React - API
   const [word, setWord] = React.useState("");
   const [guessLetter, setGuessLetter] = React.useState("");
   const { maxNumberOfTries } = React.useContext(GameConfigContext);
+  const { incrementGameCount } = React.useContext(GameRecordsContext);
 
   const gameOver = () => guessCount > maxNumberOfTries;
 
@@ -24,6 +26,7 @@ export const GameContainer = () => {
 
   React.useEffect(() => {
     assignWord();
+    incrementGameCount();
   }, []);
 
   React.useEffect(() => {
@@ -36,6 +39,7 @@ export const GameContainer = () => {
     assignWord();
     setGuessCount(0);
     setGuessLetter("");
+    incrementGameCount();
   };
 
   return (
