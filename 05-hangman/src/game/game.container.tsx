@@ -9,6 +9,8 @@ export const GameContainer = () => {
   const [guessLetter, setGuessLetter] = React.useState("");
   const { maxNumberOfTries } = React.useContext(GameConfigContext);
 
+  const gameOver = () => guessCount > maxNumberOfTries;
+
   React.useEffect(() => {
     console.log(maxNumberOfTries);
   });
@@ -18,6 +20,12 @@ export const GameContainer = () => {
     console.log(t);
     setWord(t);
   }, []);
+
+  React.useEffect(() => {
+    if (gameOver()) {
+      alert('Game Over!!');
+    }
+  }, [guessCount]);
 
   return (
     <div>
