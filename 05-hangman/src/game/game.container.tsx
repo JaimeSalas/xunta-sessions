@@ -11,21 +11,32 @@ export const GameContainer = () => {
 
   const gameOver = () => guessCount > maxNumberOfTries;
 
-  // React.useEffect(() => {
-  // });
-  console.log(maxNumberOfTries);
+  // console.log(maxNumberOfTries);
 
-  React.useEffect(() => {
-    const t = getRandomWord();
+  // -> JS, CSS
+  // Dark Mode, Light Mode -> AJAX -> CSS Dark // CSS Light
+  // HTML5 -> CSS
+  const assignWord = function () {
+    const [t] = getRandomWord();
     console.log(t);
     setWord(t);
+  };
+
+  React.useEffect(() => {
+    assignWord();
   }, []);
 
   React.useEffect(() => {
     if (gameOver()) {
-      alert('Game Over!!');
+      alert("Game Over!!");
     }
   }, [guessCount]);
+
+  const onReset = function () {
+    assignWord();
+    setGuessCount(0);
+    setGuessLetter("");
+  };
 
   return (
     <div>
@@ -49,6 +60,20 @@ export const GameContainer = () => {
       <div>
         <span>{guessCount}</span>
       </div>
+      {/* <button
+        onClick={() => {
+          assignWord();
+          setGuessCount(0);
+          setGuessLetter("");
+        }}
+      >
+        Reset
+      </button> */}
+      <button
+        onClick={onReset}
+      >
+        Reset
+      </button>
     </div>
   );
 };
