@@ -1,12 +1,10 @@
 import React from "react";
-import { GameContainer } from "./game/game.container";
-import { ConfigContainer } from "./config/config.container";
+import { Router } from './router';
 
 export const App = () => {
   return (
     <>
-      <GameContainer />
-      <ConfigContainer />
+      <Router />
     </>
   );
 };
