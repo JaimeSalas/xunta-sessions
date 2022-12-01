@@ -4,16 +4,16 @@ import { SecretWordComponent, InputGuessLetterComponent } from "./components";
 import { GameConfigContext } from "../providers/game-config/game-config.context";
 
 export const GameContainer = () => {
-  const [guessCount, setGuessCount] = React.useState(0);
+  const [guessCount, setGuessCount] = React.useState(0); // React - API
   const [word, setWord] = React.useState("");
   const [guessLetter, setGuessLetter] = React.useState("");
   const { maxNumberOfTries } = React.useContext(GameConfigContext);
 
   const gameOver = () => guessCount > maxNumberOfTries;
 
-  React.useEffect(() => {
-    console.log(maxNumberOfTries);
-  });
+  // React.useEffect(() => {
+  // });
+  console.log(maxNumberOfTries);
 
   React.useEffect(() => {
     const t = getRandomWord();
